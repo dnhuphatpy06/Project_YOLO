@@ -1,4 +1,0 @@
-https://encord.com/blog/yolo-object-detection-guide/
-https://www.datacamp.com/blog/yolo-object-detection-explained
-https://developer.ibm.com/tutorials/awb-train-yolo-object-detection-model-in-python/
-

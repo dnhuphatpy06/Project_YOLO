@@ -1,0 +1,144 @@
+B1: import các thư viện cần dùng đến ultralytics, cv2
+	Chạy lần lượt trên terminal
+		pip install ultralytics
+		pip install opencv-python
+------------------------------------------------------------------------------------------------------
+B2: Nhận diện đối tượng bằng ảnh
+	Sử dụng file Read_Img.py
+		model: YOLO("yolov8n.pt") có thể lựa chọn các model khác
+		img_path: điều chỉnh đường dẫn vào ảnh khác
+		classes: thêm lớp đối tượng muốn nhận diện nếu để trống mô hình sẽ nhận diện tất cả
+------------------------------------------------------------------------------------------------------
+B3: Nhận diện đối tượng bằng video
+	Sử dụng file Read_Video.py
+		model: có thể lựa chọn các model khác
+		video_path:  điều chỉnh đường dẫn vào video khác
+		classes:  thêm lớp đối tượng muốn nhận diện nếu để trống mô hình sẽ nhận diện tất cả
+	Sau khi chạy đoạn mã, video sẽ được hiện ra cùng với các bouding box
+	Để tắt thì chúng ta nhấn phím Q
+------------------------------------------------------------------------------------------------------
+B4: Nhận diện đối tượng trên thời gian thực
+	Sử dụng file Read_Real_Time.py
+		model: có thể lựa chọn các model khác
+		cam_index: lựa chọn chỉ số cam (0 : thường ứng với cam máy tính, 1: thường ứng với cam ảo)
+		classes: thêm lớp đối tượng muốn nhận diện nếu để trống mô hình sẽ nhận diện tất cả
+	Sau khi chạy đoạn mã, video được quay từ camera sẽ được hiện ra cùng với các bouding box
+	Để tắt thì chúng ta nhấn phím Q
+------------------------------------------------------------------------------------------------------
+Các PHIÊN BẢN YOLO CÓ THỂ SỬ DỤNG VỚI THƯ VIÊN ULTRALYTICS
+
+YOLOv8 (phiên bản mới nhất của YOLO)
+
+yolov8n.pt: Mô hình YOLOv8 nhỏ nhất (Nano).
+yolov8s.pt: Mô hình YOLOv8 nhỏ (Small).
+yolov8m.pt: Mô hình YOLOv8 vừa (Medium).
+yolov8l.pt: Mô hình YOLOv8 lớn (Large).
+yolov8x.pt: Mô hình YOLOv8 cực lớn (Extra Large).
+YOLOv5 (Phiên bản phổ biến trước YOLOv8)
+
+yolov5n.pt: Mô hình YOLOv5 nhỏ nhất.
+yolov5s.pt: Mô hình YOLOv5 nhỏ.
+yolov5m.pt: Mô hình YOLOv5 vừa.
+yolov5l.pt: Mô hình YOLOv5 lớn.
+yolov5x.pt: Mô hình YOLOv5 cực lớn.
+YOLOv4
+
+yolov4.weights: Mô hình YOLOv4.
+yolov4-tiny.weights: Phiên bản YOLOv4 nhỏ hơn (YOLOv4-tiny).
+YOLOv3
+
+yolov3.weights: Mô hình YOLOv3.
+yolov3-tiny.weights: Phiên bản YOLOv3 nhỏ (YOLOv3-tiny).
+YOLOv2 (Darknet)
+
+yolov2.weights: Mô hình YOLOv2.
+yolov2-tiny.weights: Phiên bản YOLOv2 nhỏ (YOLOv2-tiny).
+
+YOLOv4-CSP: Mô hình YOLOv4 với CSPNet.
+YOLOv5x6.pt: Mô hình YOLOv5 với phiên bản mở rộng, được tối ưu cho các tác vụ nhận diện đối tượng ở quy mô lớn.
+YOLOv4x: Mô hình YOLOv4 được cải tiến với các kỹ thuật mới.
+
+---------------------------------------------------------------------------------------------------------------
+person - Người
+bicycle - Xe đạp
+car - Xe ô tô
+motorcycle - Xe máy
+airplane - Máy bay
+bus - Xe buýt
+train - Tàu hỏa
+truck - Xe tải
+boat - Thuyền
+traffic light - Đèn giao thông
+fire hydrant - Trụ cứu hỏa
+stop sign - Biển báo dừng
+parking meter - Đồng hồ đỗ xe
+bench - Ghế băng
+bird - Chim
+cat - Mèo
+dog - Chó
+horse - Ngựa
+sheep - Cừu
+cow - Bò
+elephant - Voi
+bear - Gấu
+zebra - Ngựa vằn
+giraffe - Hươu cao cổ
+carrot - Cà rốt
+apple - Quả táo
+orange - Quả cam
+broccoli - Bông cải xanh
+cabbage - Bắp cải
+cake - Bánh
+chair - Ghế
+couch - Ghế sofa
+potted plant - Cây trong chậu
+bed - Giường
+dining table - Bàn ăn
+toilet - Bồn cầu
+tv - Ti vi
+laptop - Máy tính xách tay
+mouse - Chuột
+remote - Điều khiển từ xa
+keyboard - Bàn phím
+cell phone - Điện thoại di động
+microwave - Lò vi sóng
+oven - Lò nướng
+toaster - Máy nướng bánh mì
+sink - Bồn rửa
+refrigerator - Tủ lạnh
+book - Sách
+clock - Đồng hồ
+vase - Lọ hoa
+scissors - Kéo
+teddy bear - Gấu bông
+hair drier - Máy sấy tóc
+toothbrush - Bàn chải đánh răng
+hair brush - Lược tóc
+ball - Quả bóng
+bat - Gậy bóng chày
+baseball glove - Găng tay bóng chày
+skateboard - Ván trượt
+surfboard - Ván lướt sóng
+tennis racket - Vợt tennis
+bottle - Chai lọ
+wine glass - Ly rượu
+cup - Cốc
+fork - Dĩa
+knife - Dao
+spoon - Muỗng
+bowl - Bát
+banana - Chuối
+pizza - Pizza
+donut - Bánh donut
+cake - Bánh
+chair - Ghế
+couch - Ghế sofa
+potted plant - Cây trong chậu
+bed - Giường
+dining table - Bàn ăn
+toilet - Bồn cầu
+tv - Ti vi
+laptop - Máy tính xách tay
+
+
+
